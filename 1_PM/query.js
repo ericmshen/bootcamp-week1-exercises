@@ -97,28 +97,51 @@ const database = {
 
 /* using the js object and array methods, query the database defined above.
 Assume that the data in the database is dynamic and changes every day so
-dont hard code solutions. */
+don't hard code solutions. */
 
 // Implement the function usersByPet to return a list of user objects filtered by cat or dog.
 const usersByPet = pet => {
+  return database.users.filter(user => user.favPet == pet)
 }
-console.log(usersByPet('dog'))
-console.log(usersByPet('cat'))
+// console.log(usersByPet('dog'))
+// console.log(usersByPet('cat'))
 
 // Implement the function collegeLookup to return the name and color of a user's college.
 const collegeLookup = user => {
+  user_info = database.users.filter(elm => elm.firstName === user)[0]
+  college = database.college.filter(elm => elm.id == user_info.collegeId)[0]
+  return [college.name, college.color]
 }
-console.log(collegeLookup('Charles'))
-console.log(collegeLookup('Daniela'))
+// console.log(collegeLookup('Charles'))
+// console.log(collegeLookup('Daniela'))
+
+friendPairs = database.friends
+
+const oppositePets = (id1, id2) => {
+  student1 = database.users.filter(user => user.id === id1)[0]
+  student2 = database.users.filter(user => user.id === id2)[0]
+  return !(student1.favPet === student2.favPet)
+}
+
+const sameCollege = (id1, id2) => {
+  student1 = database.users.filter(user => user.id === id1)[0]
+  student2 = database.users.filter(user => user.id === id2)[0]
+  return (student1.collegeId === student2.collegeId)
+}
+
+const schoolInState = (user) => {
+  college = database.college.filter(elm => elm.id === user.collegeId)[0]
+  return user.state === college.state
+}
 
 // define oppositesAttract as a list of friend objects whose favorite pets are different.
-const oppositesAttract = _______
-console.log(oppositesAttract)
+const oppositesAttract = friendPairs.filter(pair => oppositePets(pair.id1, pair.id2))
+// console.log(oppositesAttract)
 
 // define local as a list of users who live in the same state as they go to school.
-const local = _______
+const local = database.users.filter(schoolInState)
 console.log(local)
 
 // define collegeFriends as a list of friend objects that go to the same college
-const collegeFriends = _______
+const collegeFriends = friendPairs.filter(pair => sameCollege(pair.id1, pair.id2))
 console.log(collegeFriends)

@@ -11,8 +11,12 @@ const verb1 = ______
 Change thses values to generate a different story
 */
 
-const story = `
-**replace this with your story using a template string**
-`
+temp0 = 'love'
+temp1 = 'Ted Cruz'
+temp2 = 'podium'
+temp3 = 'announces'
+temp4 = 'that he is the Zodiac Killer'
+
+const story = `I ${temp0} it when ${temp1} goes to the ${temp2} and ${temp3} ${temp4}!`
 
 console.log(story)
