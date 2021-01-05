@@ -1,0 +1,143 @@
+body {
+    font-family: Helvetica, Arial;
+    background-color: #DDDDDD;
+}
+
+span {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 18px;
+    background-color: #EEEEEE;
+    padding: 1em;
+    text-align: center;
+}
+
+#mainimage {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #666666;
+    padding: 0.5em;
+}
+
+.header {
+    margin: auto;
+    max-width: 40%;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+.navbar {
+    height: 4em;
+    font-size: 1em;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rainbow {
+    color: #000000;
+    transition: 0.2s ease-in-out;
+}
+
+#rainbow:hover {
+    color: #B00020;
+    transition: 0.2s ease-in-out;
+}
+
+.scriptcontainer {
+    width: 60%;
+    margin: auto;
+    padding: 50px;
+    background-color: #BBB;
+    text-align: center;
+}
+
+#scripttext {
+    width: 40vw;
+    display: flex;
+    align-content: center;
+    margin: auto;
+    margin-top: 50px;
+    font-family: monospace;
+    font-size: 12px;
+    height: 500px;
+    overflow: auto;
+    padding: 2em;
+    border: solid 3px #999;
+    background-color: #EEEEEE;
+    text-align: left;
+}
+
+#gallery {
+    margin: 0 auto 0;
+}
+
+#gallery-table {
+    border: 0px;
+    max-width: 80%;
+    margin: 0 auto 0;
+}
+
+td {
+    padding: 10px;
+    transition: 0.2s;
+}
+
+td:hover {
+    transform: scale(1.5);
+}
+
+img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#links li {
+    display: inline;
+    padding: 2em;
+    padding-left: 0;
+}
+
+li:hover{
+    color: #B00020;
+}
+
+#beelink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe {
+    display: flex;
+    margin: auto;
+    width: 50vw;
+    height: 40vw
+}
