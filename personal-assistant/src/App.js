@@ -1,11 +1,14 @@
 import React from 'react'
-import ExampleComponent from './ExampleComponent'
+import DeleteButton from './DeleteButton'
+// import TodosList from './TodosList'
 
 const App = () => (
-  <div>
-    Beep boop hi there, I&apos;m your personal assistant hehe
-    <ExampleComponent alertText='you pressed me'></ExampleComponent>
-  </div>
+  <ThemeProvider theme = { theme }>
+    <div>
+      yo<br></br>
+      <DeleteButton alertText='you pressed me'></DeleteButton>
+    </div>
+  </ThemeProvider>
 )
 
 export default App
