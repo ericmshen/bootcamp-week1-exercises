@@ -8,14 +8,19 @@ import styled from 'styled-components'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {todos: ['foo', 'bar', 'baz'], searchText: ''};
+    this.state = {todos: [{value: 'foo', id: 1}, {value: 'bar', id: 2}, {value: 'baz', id: 3}], nextId: 4, searchText: ''};
     this.addTodo = this.addTodo.bind(this);
     this.changeSearch = this.changeSearch.bind(this);
   }
 
   addTodo(newInputTodo) {
-    const newtodos = this.state.todos.concat(newInputTodo)
-    this.setState({todos: newtodos});
+    const newTodoObject = {
+      value: newInputTodo,
+      id: this.state.nextId,
+    }
+    const newId = this.state.nextId + 1;
+    const newtodos = this.state.todos.concat(newTodoObject);
+    this.setState({todos: newtodos, nextId: newId});
   }
 
   changeSearch(query) {

@@ -14,6 +14,7 @@ class AddTodoBar extends React.Component {
 
     handleSubmit(e) {
         this.props.onNewTodoSubmit(this.state.newTodo);
+        this.setState({newTodo: ''});
         e.preventDefault();
     }
 
