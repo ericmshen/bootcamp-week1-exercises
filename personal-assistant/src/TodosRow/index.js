@@ -6,7 +6,7 @@ class TodosRow extends React.Component {
     render() {
         return (
             <SimpleRow>
-                <div> {this.props.todo} </div>
+                <div style={{textAlign: 'center'}}> {this.props.todo} </div>
                 <div> <DeleteButton alertText={this.props.todo}></DeleteButton> </div>
             </SimpleRow>
         )

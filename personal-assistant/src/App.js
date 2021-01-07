@@ -13,8 +13,9 @@ class App extends React.Component {
     this.changeSearch = this.changeSearch.bind(this);
   }
 
-  addTodo(newTodo) {
-    this.state.todos.append(newTodo);
+  addTodo(newInputTodo) {
+    const newtodos = this.state.todos.concat(newInputTodo)
+    this.setState({todos: newtodos});
   }
 
   changeSearch(query) {
@@ -32,8 +33,8 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Header>you gotta do this stuff bruh</Header>
         <AddTodoBar 
-          newTodo = {this.state.newTodo}
-          addTodo = {this.addTodo}
+          newInputTodo = {this.state.newTodo}
+          onNewTodoSubmit = {this.addTodo}
         />
         <SearchBar 
           query = {this.state.searchText}
