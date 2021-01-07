@@ -1,14 +1,22 @@
 import React from 'react'
-import DeleteButton from './DeleteButton'
-// import TodosList from './TodosList'
+import TodosList from './TodosList'
 
-const App = () => (
-  <ThemeProvider theme = { theme }>
-    <div>
-      yo<br></br>
-      <DeleteButton alertText='you pressed me'></DeleteButton>
-    </div>
-  </ThemeProvider>
-)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {todos: ['foo', 'bar', 'baz']};
+  }
+
+  render() {
+    return (
+      <>
+        <h1>you gotta do this stuff bruh</h1>
+        <div>
+          <TodosList todos={this.state.todos}></TodosList>
+        </div>
+      </>
+    )
+  }
+}
 
 export default App
