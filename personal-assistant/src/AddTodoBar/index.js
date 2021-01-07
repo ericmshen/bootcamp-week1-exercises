@@ -1,14 +1,14 @@
 import React from 'react'
 import AddButton from '../AddButton'
-
 class AddTodoBar extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
-        alert('dummy handleSubmit');
+    handleSubmit(e) {
+        alert(e.target.value);
+        this.props.addTodo(e.target.value)
     }
 
     render() {
@@ -16,9 +16,9 @@ class AddTodoBar extends React.Component {
             <form onSubmit = {this.handleSubmit}>
                 <label>
                     Add a todo:
-                    <input type="text" />
+                    <input type="text" value={this.props.newTodo}/>
                 </label>
-                <AddButton alertText='add this'></AddButton>
+                <AddButton></AddButton>
             </form>
         )
     }

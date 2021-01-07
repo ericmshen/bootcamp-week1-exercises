@@ -3,20 +3,18 @@ import React from 'react'
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {query: ''};
-        this.handleChange = this.handleChange.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({query: event.target.value});
+    handleSearchChange(e) {
+        this.props.onSearchTextChange(e.target.value);
     }
 
     render() {
         return (
             <div>
                 <form>
-                    <label>search</label>
-                    <input type="text" onChange={this.handleChange} />
+                    <input type="text" placeholder="search" value = {this.props.searchText} onChange={this.handleSearchChange} />
                 </form>
             </div>
         )

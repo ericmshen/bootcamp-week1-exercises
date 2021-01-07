@@ -8,7 +8,17 @@ import styled from 'styled-components'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {todos: ['foo', 'bar', 'baz'], displaytodos: ['foo']};
+    this.state = {todos: ['foo', 'bar', 'baz'], searchText: ''};
+    this.addTodo = this.addTodo.bind(this);
+    this.changeSearch = this.changeSearch.bind(this);
+  }
+
+  addTodo(newTodo) {
+    this.state.todos.append(newTodo);
+  }
+
+  changeSearch(query) {
+    this.setState({searchText: query});
   }
 
   render() {
@@ -17,14 +27,22 @@ class App extends React.Component {
     font-weight: ${props => props.theme.font.header.weight};
     color: ${props => props.theme.font.header.color};
     `
+
     return (
       <ThemeProvider theme={theme}>
         <Header>you gotta do this stuff bruh</Header>
-        <AddTodoBar></AddTodoBar>
-        <SearchBar></SearchBar>
-        <div>
-          <TodosList todos={this.state.displaytodos}></TodosList>
-        </div>
+        <AddTodoBar 
+          newTodo = {this.state.newTodo}
+          addTodo = {this.addTodo}
+        />
+        <SearchBar 
+          query = {this.state.searchText}
+          onSearchTextChange = {this.changeSearch}
+        />
+        <TodosList 
+          todos={this.state.todos} 
+          searchText={this.state.searchText}
+        />
       </ThemeProvider>
     )
   }
