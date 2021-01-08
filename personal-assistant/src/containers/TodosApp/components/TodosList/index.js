@@ -1,6 +1,6 @@
 import React from 'react'
-import TodosRow from '../TodosRow'
-import TodosListBlank from '../TodosListBlank'
+import TodosRow from './components/TodosRow'
+import TodosListBlank from './components/TodosListBlank'
 
 class TodosList extends React.Component {
     constructor(props) {

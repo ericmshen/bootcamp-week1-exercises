@@ -1,8 +1,8 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
-import TodosApp from './TodosApp'
-import Weather from './Weather'
-import Navbar from './Navbar'
+import TodosApp from './containers/TodosApp'
+import Weather from './containers/Weather'
+import Navbar from './components/Navbar'
 
 const App = () => {
     return (

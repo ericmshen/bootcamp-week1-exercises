@@ -1,6 +1,6 @@
 import React from 'react'
 import { SimpleRow } from './styles.js'
-import DeleteButton from '../DeleteButton'
+import DeleteButton from './components/DeleteButton'
 
 class TodosRow extends React.Component {
     constructor(props) {
