@@ -9,9 +9,9 @@ const theme = {
     },
     font: {
         header: {
-            family: 'Papyrus',
+            family: 'verdana',
             weight: 12,
-            color: 'red',
+            color: 'navy',
         }
     }
 }
