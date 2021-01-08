@@ -9,7 +9,7 @@ class TodosList extends React.Component {
         const showTodos = !(displayTodos.length === 0);
 
         if (showTodos) {
-            const todoRows = displayTodos.map((todo) => <TodosRow todo={todo.value}></TodosRow>);
+            const todoRows = displayTodos.map((todo) => <TodosRow todo={todo.value} id={todo.id}/>);
             return (
                 <div>
                     {todoRows}
