@@ -2,6 +2,7 @@ import React from 'react'
 import TodosList from './TodosList'
 import AddTodoBar from './AddTodoBar'
 import SearchBar from './SearchBar'
+import Weather from './Weather'
 import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 import styled from 'styled-components'
@@ -44,23 +45,24 @@ class App extends React.Component {
     return (
       <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'space-between', padding: '50px'}}>
         <ThemeProvider theme={theme}>
-        <Header>you gotta do this stuff bruh</Header>
-        <AddTodoBar 
-          newInputTodo = {this.state.newTodo}
-          onNewTodoSubmit = {this.addTodo}
-        />
-        <SearchBar 
-          query = {this.state.searchText}
-          onSearchTextChange = {this.changeSearch}
-        />
-        <br />
-        <TodosList 
-          todos = {this.state.todos} 
-          searchText = {this.state.searchText}
-          deleteId = {this.state.deleteId}
-          onDeleteTodo = {this.deleteTodo}
-        />
-      </ThemeProvider>
+          <Header>you gotta do this stuff bruh</Header>
+          <AddTodoBar 
+            newInputTodo = {this.state.newTodo}
+            onNewTodoSubmit = {this.addTodo}
+          />
+          <SearchBar 
+            query = {this.state.searchText}
+            onSearchTextChange = {this.changeSearch}
+          />
+          <br />
+          <TodosList 
+            todos = {this.state.todos} 
+            searchText = {this.state.searchText}
+            deleteId = {this.state.deleteId}
+            onDeleteTodo = {this.deleteTodo}
+          />
+        </ThemeProvider>
+        <Weather />
       </div>
     )
   }
