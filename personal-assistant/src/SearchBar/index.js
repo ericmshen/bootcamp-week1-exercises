@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{textAlign: 'center'}}>
                 <form>
                     <input type="text" placeholder="search" value = {this.props.searchText} onChange={this.handleSearchChange} />
                 </form>

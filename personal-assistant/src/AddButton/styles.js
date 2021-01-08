@@ -9,6 +9,6 @@ export const SimpleButton = styled.button`
 
   &:hover { 
       color: white; 
-      background-color: red;
+      background-color: blue;
   }
 `

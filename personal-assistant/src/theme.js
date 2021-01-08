@@ -9,7 +9,7 @@ const theme = {
     },
     font: {
         header: {
-            family: 'Arial',
+            family: 'Papyrus',
             weight: 12,
             color: 'red',
         }

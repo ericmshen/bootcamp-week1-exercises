@@ -8,9 +8,10 @@ import styled from 'styled-components'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {todos: [{value: 'foo', id: 1}, {value: 'bar', id: 2}, {value: 'baz', id: 3}], nextId: 4, searchText: ''};
+    this.state = {todos: [], nextId: 1, searchText: ''};
     this.addTodo = this.addTodo.bind(this);
     this.changeSearch = this.changeSearch.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   addTodo(newInputTodo) {
@@ -27,15 +28,22 @@ class App extends React.Component {
     this.setState({searchText: query});
   }
 
+  deleteTodo(deleteId) {
+    const newtodos = this.state.todos.filter((todo) => todo.id !== deleteId);
+    this.setState({todos: newtodos});
+  }
+
   render() {
     const Header = styled.h1`
     font-family: ${props => props.theme.font.header.family};
     font-weight: ${props => props.theme.font.header.weight};
     color: ${props => props.theme.font.header.color};
+    text-align: center;
     `
 
     return (
-      <ThemeProvider theme={theme}>
+      <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'space-between', padding: '50px'}}>
+        <ThemeProvider theme={theme}>
         <Header>you gotta do this stuff bruh</Header>
         <AddTodoBar 
           newInputTodo = {this.state.newTodo}
@@ -45,11 +53,15 @@ class App extends React.Component {
           query = {this.state.searchText}
           onSearchTextChange = {this.changeSearch}
         />
+        <br />
         <TodosList 
-          todos={this.state.todos} 
-          searchText={this.state.searchText}
+          todos = {this.state.todos} 
+          searchText = {this.state.searchText}
+          deleteId = {this.state.deleteId}
+          onDeleteTodo = {this.deleteTodo}
         />
       </ThemeProvider>
+      </div>
     )
   }
 }
